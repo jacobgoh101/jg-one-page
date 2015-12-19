@@ -316,12 +316,18 @@ Header Hero unit
 front page
  */
  .content{
+ 	text-align: center;
  	margin: 0 $golden*0.5em;
+ 	padding-top: $golden*1em;
+ 	padding-bottom: $golden*1em;
+ 	@include clearfix;
  	@include media($medium-screen) {
  		margin: 0 $golden*1em;
  	}
  	@include media($large-screen) {
- 		margin: 0 $golden*2em;
+ 		max-width: 1170px;
+ 		padding: $golden*1em $golden*2em;
+ 		margin: 0 auto;
  	}
 
  	h1{
@@ -332,42 +338,106 @@ front page
  hr#title-separator{
  	width: modular-scale(4,1em,$golden);
  	border-color: $action-color;
- 	display: inline-block;
- 	margin: 0;
  	line-height: 0;
+ 	@include row();
+ 	margin: $golden*0.5em auto;
  }
 
-//front-page service section
-#services-section{
-	background-color: lighten(#333,77%);
-	@include outer-container(100%);
-	@include clearfix;
-	margin: $golden*1em 0;
-	padding: $golden*1em 0;
-	text-align: center;
-	.service-box{
-		@include span-columns(12);
-		@include media($medium-screen) {
-			@include span-columns(8);
-			@include shift(2);
-		}
-		@include media($large-screen) {
-			@include span-columns(4);
-			@include shift(0);
-		}
-		margin:$golden*0.5em 0;
-		padding: $golden*1em $golden*0.5em;
-		background-color: white;
-		border-bottom: 5px solid $action-color;
-		&:active,
-		&:focus,
-		&:hover {
-			border-bottom: 5px solid shade($action-color, 25%);
-		}
+/* 
+front-page service section
+ */
+ #services-section{
+ 	background-color: lighten(#333,77%);
+ 	@include outer-container(100%);
+ 	@include clearfix;
+ 	margin: $golden*1em 0 0;
+ 	text-align: center;
+ 	.service-box{
+ 		@include span-columns(12);
+ 		@include media($medium-screen) {
+ 			@include span-columns(8);
+ 			@include shift(2);
+ 		}
+ 		@include media($large-screen) {
+ 			@include span-columns(4);
+ 			@include shift(0);
+ 		}
+ 		margin:$golden*0.5em 0;
+ 		padding: $golden*1em $golden*0.5em;
+ 		background-color: white;
+ 		border-bottom: 5px solid $action-color;
+ 		&:active,
+ 		&:focus,
+ 		&:hover {
+ 			border-bottom: 5px solid shade($action-color, 25%);
+ 		}
 
-		i{
-			font-size: 4em;
-			padding-bottom: $golden*0.25em;
-		}
-	}
-}
+ 		i{
+ 			font-size: 4em;
+ 			padding-bottom: $golden*0.25em;
+ 		}
+ 	}
+ }
+
+/* 
+front-page story section
+ */
+ .story-section{
+ 	border-bottom: 1px solid transparentize(#333, 0.9);
+ 	border-top: 1px solid transparentize(#333, 0.9);
+ 	.content{
+ 		.side-image {  
+ 			$base-line-height: 1.5em !default;
+ 			$action-color: #477DCA !default;
+ 			$dark-gray: #333 !default;
+ 			$large-screen: em(860) !default;
+ 			$base-font-color: $dark-gray !default;
+
+
+ 			@include media($large-screen) {
+ 				@include row(table);
+ 			}
+
+ 			.images-wrapper {
+ 				background-image: url('http://localhost/one-page/wp-content/themes/jg-one-page/images/our-story.jpg');
+ 				background-repeat: no-repeat;
+ 				background-position: right center;
+ 				background-size: cover;
+ 				display: block;
+ 				min-height: 12em;
+ 				padding: 3em;
+ 			}
+
+ 			.side-image-content {
+ 				padding: 1em*$golden;
+
+ 				p {
+ 					color: $base-font-color;
+ 					line-height: $base-line-height;
+ 					margin-bottom: 3em;
+ 					text-align: justify;
+ 				}
+ 			}
+
+ 			@include reset-display();
+ 		}
+ 	}
+ }
+ @include direction-context(right-to-left) {
+ 	.images-wrapper {
+ 		@include span-columns(12);
+ 		@include media($large-screen) {
+ 			@include span-columns(4);
+ 		}
+ 	}
+ 	.side-image-content {
+ 		@include span-columns(12);
+ 		@include media($large-screen) {
+ 			@include span-columns(8);
+ 		}
+ 	}
+ }
+
+ /* 
+front-page team section
+ */

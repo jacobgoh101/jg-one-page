@@ -43,13 +43,21 @@ get_header(); ?>
 	<div class="content">
 		<h1>Our Story</h1>
 		<hr id="title-separator">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		<div id="story-image">
-			<img alt="story image" src="http://localhost/one-page/wp-content/themes/jg-one-page/images/our-story.jpg">
+		<div class="side-image">
+			<div class="images-wrapper">
+			</div>
+			<div class="side-image-content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.</p>
+			</div>
 		</div>
-		<div id="story-copy">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ergo hoc quidem apparet, nos ad agendum esse natos. Conclusum est enim contra Cyrenaicos satis acute, nihil ad Epicurum. Si alia sentit, inquam, alia loquitur, numquam intellegam quid sentiat; Sed erat aequius Triarium aliquid de dissensione nostra iudicare. Hoc est dicere: Non reprehenderem asotos, si non essent asoti. Nec hoc ille non vidit, sed verborum magnificentia est et gloria delectatus. Duo Reges: constructio interrete. Iis igitur est difficilius satis facere, qui se Latina scripta dicunt contemnere. </p>
-		</div>
+	</div>
+</div>
+
+<!-- our team -->
+<div class="team-section">
+	<div class="content">
+		<h1>Our Team</h1>
+		<hr id="title-separator">
 	</div>
 </div>
 
