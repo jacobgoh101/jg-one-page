@@ -11,16 +11,29 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jg-one-page' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jg-one-page' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'jg-one-page' ), 'jg-one-page', '<a href="http://jacobgoh.com" rel="designer">Jacob Goh</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+</div><!-- #content -->
+<footer class="footer" role="contentinfo">
+	<div class="footer-logo">
+		<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png" alt="Logo image">
+	</div>
+	<?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => '') ); ?>
+	<div class="footer-social-icon">
+		<a href="javascript:void(0)"><i class="fa fa-facebook"></i></a>
+		<a href="javascript:void(0)"><i class="fa fa-twitter"></i></a>
+		<a href="javascript:void(0)"><i class="fa fa-instagram"></i></a>
+	</div>
+	<!-- <hr id="footer-separator" /> -->
+	<div class="site-info">
+		<span><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jg-one-page' ) ); ?>"><?php printf( esc_html__( 'Powered by %s', 'jg-one-page' ), 'WordPress' ); ?></a></span>
+		<span class="sep"> | </span>
+		<span>Developed by <a href="http://jacobgoh.com" rel="designer">Jacob Goh</a></span>
+	</div>
+</footer>	
 </div><!-- #page -->
+
+
+
+
 
 <?php wp_footer(); ?>
 

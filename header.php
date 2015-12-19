@@ -12,39 +12,52 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jg-one-page' ); ?></a>
+	<div id="page" class="site">
+		<?php
+		if( is_front_page() ){
+			?>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
+			<div class="hero">
+				<div class="hero-inner">
+					<a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image"></a>
+					<div class="hero-copy">
+						<h1>Short description of Product</h1>
+						<p>A few reasons why this product is worth using, who it's for and why they need it.</p>	
+					</div>
+				</div>
+			</div>
+
 			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+		}
+		?>
+		<header class="navigation" role="banner">
+			<div class="navigation-wrapper">
+				<a href="javascript:void(0)" class="logo">
+					<img src="http://localhost/one-page/wp-content/themes/jg-one-page/images/logo.png" alt="Logo Image">
+				</a>
+				<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><i class="fa fa-bars"></i>
+				</a>
+				<nav role="navigation">
+					<?php wp_nav_menu( array( 
+						'theme_location' => 'primary', 
+						'container' => '',
+						'menu_class' => 'navigation-menu show',
+						'menu_id' => 'js-navigation-menu'
+						) ); ?>
+					</nav>
+				</div>
+			</header>
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'jg-one-page' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+
+			<div id="content" class="site-content">

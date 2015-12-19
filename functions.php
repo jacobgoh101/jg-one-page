@@ -47,6 +47,11 @@ function jg_one_page_setup() {
 		'primary' => esc_html__( 'Primary', 'jg-one-page' ),
 	) );
 
+	// register footer meny
+	register_nav_menus( array(
+		'footer' => esc_html__( 'Footer', 'jg-one-page' ),
+	) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -116,13 +121,17 @@ add_action( 'widgets_init', 'jg_one_page_widgets_init' );
 function jg_one_page_scripts() {
 	wp_enqueue_style( 'jg-one-page-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'jg-one-page-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	//wp_enqueue_script( 'jg-one-page-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'jg-one-page-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'header-js', get_template_directory_uri() . '/js/header.js', array('jquery'), null , true ); 
+
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 }
 add_action( 'wp_enqueue_scripts', 'jg_one_page_scripts' );
 
