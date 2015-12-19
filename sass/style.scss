@@ -35,18 +35,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'base/base';
 
 @mixin centerer($horizontal: true, $vertical: true) {
-  position: absolute;
-  @if ($horizontal and $vertical) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } @else if ($horizontal) {
-    left: 50%;
-    transform: translate(-50%, 0);
-  } @else if ($vertical) {
-    top: 50%;
-    transform: translate(0, -50%);
-  }
+	position: absolute;
+	@if ($horizontal and $vertical) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	} @else if ($horizontal) {
+		left: 50%;
+		transform: translate(-50%, 0);
+	} @else if ($vertical) {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
 }
 
 /* 
@@ -246,14 +246,14 @@ Footer
 Header Hero unit
  */
  .hero {  
-  $base-border-radius: 3px !default;
-  $action-color: #477DCA !default;
-  $large-screen: em(860) !default;
-  $hero-background-top: #7F99BE; 
-  $hero-background-bottom: #20392B;
-  $hero-color: white;
-  $gradient-angle: 10deg;
-  $hero-image: 'http://localhost/one-page/wp-content/themes/jg-one-page/images/front-page-hero-background.jpg';
+ 	$base-border-radius: 3px !default;
+ 	$action-color: #477DCA !default;
+ 	$large-screen: em(860) !default;
+ 	$hero-background-top: #7F99BE; 
+ 	$hero-background-bottom: #20392B;
+ 	$hero-color: white;
+ 	$gradient-angle: 10deg;
+ 	$hero-image: 'http://localhost/one-page/wp-content/themes/jg-one-page/images/front-page-hero-background.jpg';
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url($hero-image); //use linear gradient to darken;
   background-repeat: no-repeat;
@@ -266,48 +266,108 @@ Header Hero unit
   position: relative;
 
   .hero-logo img {
-    height: 4em;
-    margin-bottom: 1em;
-    @include media($large-screen) {
-    	height: 6em;
-    }
+  	height: 4em;
+  	margin-bottom: 1em;
+  	@include media($large-screen) {
+  		height: 6em;
+  	}
   }
 
   .hero-inner {
-    @include outer-container;
-    @include clearfix;
-    margin: auto;
-    padding: 3.5em;
-    text-align: center;
-    width: 90%;
+  	@include outer-container;
+  	@include clearfix;
+  	margin: auto;
+  	padding: 3.5em;
+  	text-align: center;
+  	width: 90%;
 
-    .hero-copy {
-      text-align: center;
-      
-      h1 {
-        color: $hero-color;
-        font-size: 1.6em;
-        margin-bottom: 0.5em;
+  	.hero-copy {
+  		text-align: center;
 
-        @include media($large-screen) {
-          font-size: 1.8em;
-        }
-      }
+  		h1 {
+  			color: $hero-color;
+  			font-size: 1.6em;
+  			margin-bottom: 0.5em;
 
-      p {
-        color: $hero-color;
-        line-height: 1.4em;
-        margin: 0 auto 3em auto; 
-        max-width: 80%;
+  			@include media($large-screen) {
+  				font-size: 1.8em;
+  			}
+  		}
 
-        @include media($large-screen) {
-          font-size: 1.1em;
-          max-width: 40%;
-        }
-      }
-    }
+  		p {
+  			color: $hero-color;
+  			line-height: 1.4em;
+  			margin: 0 auto 3em auto; 
+  			max-width: 80%;
+
+  			@include media($large-screen) {
+  				font-size: 1.1em;
+  				max-width: 40%;
+  			}
+  		}
+  	}
 
     //overwrite previous settings and set hero-inner centered horizontally and vertically
     @include centerer;
-  }
+}
+}
+
+/* 
+front page
+ */
+ .content{
+ 	margin: 0 $golden*0.5em;
+ 	@include media($medium-screen) {
+ 		margin: 0 $golden*1em;
+ 	}
+ 	@include media($large-screen) {
+ 		margin: 0 $golden*2em;
+ 	}
+
+ 	h1{
+ 		margin-bottom: 0;
+ 	}
+ }
+
+ hr#title-separator{
+ 	width: modular-scale(4,1em,$golden);
+ 	border-color: $action-color;
+ 	display: inline-block;
+ 	margin: 0;
+ 	line-height: 0;
+ }
+
+//front-page service section
+#services-section{
+	background-color: lighten(#333,77%);
+	@include outer-container(100%);
+	@include clearfix;
+	margin: $golden*1em 0;
+	padding: $golden*1em 0;
+	text-align: center;
+	.service-box{
+		@include span-columns(12);
+		@include media($medium-screen) {
+			@include span-columns(8);
+			@include shift(2);
+		}
+		@include media($large-screen) {
+			@include span-columns(4);
+			@include shift(0);
+		}
+		margin:$golden*0.5em 0;
+		padding: $golden*1em $golden*0.5em;
+		background-color: white;
+		border-bottom: 5px solid $action-color;
+		&:active,
+		&:focus,
+		&:hover {
+			border-bottom: 5px solid shade($action-color, 25%);
+		}
+
+		i{
+			font-size: 4em;
+			padding-bottom: $golden*0.25em;
+		}
+	}
 }

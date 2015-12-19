@@ -18,6 +18,23 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
+@mixin htags($factor:1){
+  h1{ font-size: $factor * $base-font-size * 2.25; }
+  h2{ font-size: $factor * $base-font-size * 2; }
+  h3{ font-size: $factor * $base-font-size * 1.75; }
+  h4{ font-size: $factor * $base-font-size * 1.5; }
+  h5{ font-size: $factor * $base-font-size * 1.25; }
+  h6{ font-size: $factor * $base-font-size * 2.25; }
+}
+
+@include htags(0.8);
+@include media($medium-screen) {
+  @include htags(0.9);
+}
+@include media($large-screen) {
+  @include htags();
+}
+
 p {
   margin: 0 0 $small-spacing;
 }
