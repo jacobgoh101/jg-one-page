@@ -20,5 +20,21 @@
 				
 			});
 		});
+
+		var navigationPositionTop = $('.navigation').position().top;
+		$(window).scroll(function() {
+			if($(window).scrollTop() >= navigationPositionTop){
+				$('.navigation').addClass('sticky-header');
+				$('#sticky-header-empty-space').removeClass('sticky-header-off');
+				$('#sticky-header-empty-space').addClass('sticky-header-on');
+			}
+			if($(window).scrollTop() < navigationPositionTop){
+				$('.navigation').removeClass('sticky-header');
+				$('#sticky-header-empty-space').removeClass('sticky-header-on');
+				$('#sticky-header-empty-space').addClass('sticky-header-off');
+			}
+
+		});
+
 	});
 })( jQuery );

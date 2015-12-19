@@ -56,6 +56,7 @@
 					</nav>
 				</div>
 			</header>
+			<div id="sticky-header-empty-space" class="sticky-header-off"></div>
 
 
 

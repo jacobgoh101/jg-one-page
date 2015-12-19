@@ -164,6 +164,23 @@ Header Section
   	}
   }
 
+  .sticky-header.navigation{
+  	position: fixed;
+  	top: 0;
+  	width: 100%;
+  	background-color: white;
+  	z-index: 999;
+  }
+  #sticky-header-empty-space{
+  	width: 100%;
+  	&.sticky-header-off{
+  		height: 0;
+  	}
+  	&.sticky-header-on{
+  		height: 130px;
+  	}
+  }
+
 /* 
 Footer
  */
