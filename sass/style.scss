@@ -34,6 +34,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 @import 'base/base';
 
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
 /* 
 Main
  */
@@ -209,3 +224,73 @@ Footer
  		}
  	}
  }
+
+/* 
+Header Hero unit
+ */
+ .hero {  
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $hero-background-top: #7F99BE; 
+  $hero-background-bottom: #20392B;
+  $hero-color: white;
+  $gradient-angle: 10deg;
+  $hero-image: 'http://localhost/one-page/wp-content/themes/jg-one-page/images/front-page-hero-background.jpg';
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url($hero-image); //use linear gradient to darken;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #324766;
+  background-size: cover;
+  padding-bottom: 3em;
+
+  height: 100vh;
+  position: relative;
+
+  .hero-logo img {
+    height: 4em;
+    margin-bottom: 1em;
+    @include media($large-screen) {
+    	height: 6em;
+    }
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+    width: 90%;
+
+    .hero-copy {
+      text-align: center;
+      
+      h1 {
+        color: $hero-color;
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+
+        @include media($large-screen) {
+          font-size: 1.8em;
+        }
+      }
+
+      p {
+        color: $hero-color;
+        line-height: 1.4em;
+        margin: 0 auto 3em auto; 
+        max-width: 80%;
+
+        @include media($large-screen) {
+          font-size: 1.1em;
+          max-width: 40%;
+        }
+      }
+    }
+
+    //overwrite previous settings and set hero-inner centered horizontally and vertically
+    @include centerer;
+  }
+}

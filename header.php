@@ -28,10 +28,10 @@
 
 			<div class="hero">
 				<div class="hero-inner">
-					<a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image"></a>
+					<a href="javascript:void(0)" class="hero-logo"><img src="http://localhost/one-page/wp-content/themes/jg-one-page/images/logo2.png" alt="Logo Image"></a>
 					<div class="hero-copy">
-						<h1>Short description of Product</h1>
-						<p>A few reasons why this product is worth using, who it's for and why they need it.</p>	
+						<h1>One Page</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velut ego nunc moveor. An tu me de L. </p>
 					</div>
 				</div>
 			</div>
