@@ -54,7 +54,7 @@ Main
  */
  .content-area{
  	max-width: 1024px;
- 	margin: 0 $golden*1em;
+ 	margin: 0 modular_scale(1,1em,$golden);
  	@include media($large-screen) {
  		margin: 0 auto;
  	}
@@ -65,9 +65,9 @@ Header Section
  .navigation {
  	$large-screen: em(860) !default;
  	$large-screen: $large-screen;
- 	padding: $golden*1em 0;
- 	border-bottom: 1px solid transparentize(#333, 0.9);
- 	margin-bottom: $golden*1em;
+ 	padding: modular_scale(1,1em,$golden) 0;
+ 	//border-bottom: 1px solid transparentize(#333, 0.9);
+ 	//margin-bottom: modular_scale(1,1em,$golden);
 
   	// Mobile view
   	.navigation-menu-button {
@@ -75,7 +75,7 @@ Header Section
   		float: right;
   		margin: 0;
   		padding-top: 0.5em;
-  		margin-right: $golden*1em;
+  		margin-right: modular_scale(1,1em,$golden);
 
   		i{
   			font-size: modular-scale(2);
@@ -111,7 +111,7 @@ Header Section
   			float: right;
   			line-height: 1.5em;
   			padding-top: 0.3em;
-  			padding-right: $golden*1em;
+  			padding-right: modular_scale(1,1em,$golden);
   		}
   	}
 
@@ -155,11 +155,11 @@ Header Section
   		display: inline-block;
 
   		@include media(max-width $large-screen) {
-  			padding-right: $golden*1em;
+  			padding-right: modular_scale(1,1em,$golden);
   		}
 
   		@include media ($large-screen) {
-  			padding-right: $golden*1em;
+  			padding-right: modular_scale(1,1em,$golden);
   		}
   	}
   }
@@ -170,6 +170,7 @@ Header Section
   	width: 100%;
   	background-color: white;
   	z-index: 999;
+  	border-bottom: 1px solid transparentize(#333, 0.9);
   }
   #sticky-header-empty-space{
   	width: 100%;
@@ -177,7 +178,7 @@ Header Section
   		height: 0;
   	}
   	&.sticky-header-on{
-  		height: 130px;
+  		height: 108px;
   	}
   }
 
@@ -189,8 +190,8 @@ Footer
  	$large-screen: em(860) !default;
  	text-align: center;
  	border-top: 1px solid transparentize(#333, 0.9);
- 	padding: $golden*1em 0;
- 	margin-top: $golden*1em;
+	// 	padding: modular_scale(1,1em,$golden) 0;
+ 	padding-top: modular_scale(3,1em,$golden);
 
  	.footer-logo {
  		margin-bottom: 1em;
@@ -317,16 +318,18 @@ front page
  */
  .content{
  	text-align: center;
- 	margin: 0 $golden*0.5em;
- 	padding-top: $golden*1em;
- 	padding-bottom: $golden*1em;
+ 	padding: 0 modular_scale(-1,1em,$golden);
+ 	padding-top: modular_scale(2,1em,$golden);
+ 	padding-bottom: modular_scale(2,1em,$golden);
  	@include clearfix;
  	@include media($medium-screen) {
- 		margin: 0 $golden*1em;
+ 		padding: 0 modular_scale(1,1em,$golden);
+ 		padding-top: modular_scale(2,1em,$golden);
+ 		padding-bottom: modular_scale(2,1em,$golden);
  	}
  	@include media($large-screen) {
  		max-width: 1170px;
- 		padding: $golden*1em $golden*2em;
+ 		padding: modular_scale(3,1em,$golden) modular_scale(2,1em,$golden);
  		margin: 0 auto;
  	}
 
@@ -343,14 +346,21 @@ front page
  	margin: $golden*0.5em auto;
  }
 
+ div#vertical-empty-space-1-618em{
+ 	@include row();
+ 	height: modular_scale(1,1em,$golden);
+ 	width: 100%;
+ 	background-color: transparent;
+ }
+
 /* 
 front-page service section
  */
  #services-section{
- 	background-color: lighten(#333,77%);
+ 	background-color: lighten(#333,70%);
  	@include outer-container(100%);
  	@include clearfix;
- 	margin: $golden*1em 0 0;
+ 	//margin: modular_scale(1,1em,$golden) 0 0;
  	text-align: center;
  	.service-box{
  		@include span-columns(12);
@@ -363,8 +373,9 @@ front-page service section
  			@include shift(0);
  		}
  		margin:$golden*0.5em 0;
- 		padding: $golden*1em $golden*0.5em;
+ 		padding: modular_scale(1,1em,$golden) $golden*0.5em;
  		background-color: white;
+ 		transition: all 0.35s ease;
  		border-bottom: 5px solid $action-color;
  		&:active,
  		&:focus,
@@ -448,7 +459,7 @@ front-page team section
  		$width: 200px;
  		width: $width;
  		display: inline-block;
- 		margin: $golden*1em;
+ 		margin: modular_scale(1,1em,$golden);
 
 
 
@@ -530,8 +541,8 @@ front-page testimonials section
  			@include shift(0);
  		}
  		position: relative;
- 		margin-bottom: $golden*1em;
- 		margin-top: $golden*1em;
+ 		margin-bottom: modular_scale(1,1em,$golden);
+ 		margin-top: modular_scale(1,1em,$golden);
  		&:last-child{
  			margin-bottom: 0;
  		}
@@ -571,3 +582,49 @@ front-page testimonials section
  		}
  	}
  }
+
+/* 
+front page call to action 
+ */
+ .call-to-action-section{
+ 	$background-image: 'http://localhost/one-page/wp-content/themes/jg-one-page/images/call-to-action-background.jpg';
+ 	@include row();
+ 	width: 100%;
+ 	min-height: 60vh;
+ 	background-image: linear-gradient(transparentize(#000, 0.4),transparentize(#000, 0.4)),url($background-image);
+ 	background-repeat: no-repeat;
+ 	background-position: center center;
+ 	background-size: cover;
+ 	background-attachment: fixed;
+ 	position: relative;
+ 	div{
+ 		width: 90%;
+ 		text-align: center;
+ 		@include centerer;
+ 		h1{
+ 			color: white;
+ 		}
+ 	}
+ }
+
+/* 
+ front page contact section 
+  */
+  .contact-section{
+  	a{
+  		@include clearfix;
+  		@include span-columns(12);
+  		@include media($medium-screen) {
+  			@include span-columns(4);
+  		}
+  		.contact-box{
+  			width: 100%;  			
+  			text-align: center;
+  			padding: modular_scale(1,1em,$golden) 0;
+  			i{
+  				font-size: modular_scale(2,1em,$golden);
+  				padding-bottom: modular_scale(-2,1em,$golden);
+  			}
+  		}
+  	}
+  }

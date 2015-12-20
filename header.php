@@ -32,6 +32,7 @@
 					<div class="hero-copy">
 						<h1>One Page</h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velut ego nunc moveor. An tu me de L. </p>
+						<a href="javascript:void(0)"><button>Get Started</button></a>
 					</div>
 				</div>
 			</div>
