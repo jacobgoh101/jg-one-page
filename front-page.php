@@ -15,6 +15,7 @@
 get_header(); ?>
 
 <!-- service section -->
+<a id="services"></a>
 <div id="services-section">
 	<div class="content">
 		<h1>Our Services</h1>
@@ -40,6 +41,7 @@ get_header(); ?>
 </div>
 
 <!-- our story -->
+<a id="story"></a>
 <div class="story-section">
 	<div class="content">
 		<h1>Our Story</h1>
@@ -56,6 +58,7 @@ get_header(); ?>
 </div>
 
 <!-- our team -->
+<a id="team"></a>
 <div class="team-section">
 	<div class="content">
 		<h1>Our Team</h1>
@@ -98,6 +101,7 @@ get_header(); ?>
 </div>
 
 <!-- testimonials -->
+<a id="customer"></a>
 <div class="testimonials-section">
 	<div class="content">
 		<h1>Happy Customer</h1>
@@ -133,6 +137,7 @@ get_header(); ?>
 </div>
 
 <!-- company contact -->
+<a id="contact"></a>
 <div class="contact-section">
 	<div class="content">
 		<h1>Contact Us</h1>

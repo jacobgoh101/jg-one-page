@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<a id="top"></a>
 	<div id="page" class="site">
 		<?php
 		if( is_front_page() ){
