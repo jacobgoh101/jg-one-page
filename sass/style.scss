@@ -441,3 +441,77 @@ front-page story section
  /* 
 front-page team section
  */
+
+ .team-section{
+ 	border-bottom: 1px solid transparentize(#333, 0.9);
+ 	.hover-tile-outer {
+ 		$width: 200px;
+ 		width: $width;
+ 		display: inline-block;
+ 		margin: $golden*1em;
+
+
+
+ 		$base-border-color: gainsboro !default;
+ 		$base-line-height: 1.5em !default;
+ 		$medium-screen: em(640) !default;
+ 		$hover-tile-height: $width*$golden;
+ 		$base-spacing: 1.5em;
+
+ 		background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
+ 		background-position: top;
+ 		background-size: cover;
+ 		background-color: beige;
+ 		border: 1px solid $base-border-color;
+ 		cursor: pointer;
+ 		height: $hover-tile-height;
+ 		margin-bottom: $base-line-height;
+
+ 		@include transition(all, 0.5s ease);
+ 		border-bottom: 5px solid $base-border-color;
+ 		&:active,
+ 		&:focus,
+ 		&:hover {
+ 			border-bottom: 5px solid $action-color;
+ 		}
+
+ 		.hover-tile-container {
+ 			height: $hover-tile-height;
+ 			overflow: hidden;
+ 		}
+
+ 		.hover-tile-container:hover > .hover-tile {
+ 			@include transform(translate(0, -1.8%));
+ 		}
+
+ 		.hover-tile {
+ 			@include transform(translate(0, -100%));
+ 			@include transition(all, 0.5s ease-in-out);
+ 			background: inherit;
+ 			color: white;
+ 			height: inherit;
+ 			overflow: hidden;
+ 			padding: $base-spacing;
+ 		}
+
+ 		.hover-tile-hidden {
+ 			background: transparentize(#000, 0.5);
+ 			position: relative;
+ 			//border-bottom: 5px solid lighten($action-color,25%);
+ 			span{
+ 				width: 90%;
+ 				@include centerer();
+ 			}
+
+ 			p {
+ 				color: transparentize(#fff, 0.3);
+ 				line-height: $base-line-height;
+ 			}
+
+ 			h4 {
+ 				margin: 0 0 0.5em 0;
+ 			}
+ 		} 		
+ 	}
+
+ }

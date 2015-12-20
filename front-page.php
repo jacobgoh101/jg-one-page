@@ -58,6 +58,39 @@ get_header(); ?>
 	<div class="content">
 		<h1>Our Team</h1>
 		<hr id="title-separator">
+		<div class="hover-tile-outer" style="background-image:url('http://localhost/one-page/wp-content/themes/jg-one-page/images/our-team/our-team-1.jpg');">
+			<div class="hover-tile-container">				
+				<div class="hover-tile hover-tile-hidden">
+					<span>
+						<h4>Jacob Goh</h4>
+						<p>Founder</p>
+					</span>
+				</div>
+				<div class="hover-tile hover-tile-visible"></div>
+			</div>
+		</div>
+		<div class="hover-tile-outer" style="background-image:url('http://localhost/one-page/wp-content/themes/jg-one-page/images/our-team/our-team-2.jpg');">
+			<div class="hover-tile-container">				
+				<div class="hover-tile hover-tile-hidden">
+					<span>
+						<h4>Jacob Goh</h4>
+						<p>Founder</p>
+					</span>
+				</div>
+				<div class="hover-tile hover-tile-visible"></div>
+			</div>
+		</div>
+		<div class="hover-tile-outer" style="background-image:url('http://localhost/one-page/wp-content/themes/jg-one-page/images/our-team/our-team-3.jpg');">
+			<div class="hover-tile-container">				
+				<div class="hover-tile hover-tile-hidden">
+					<span>
+						<h4>Jacob Goh</h4>
+						<p>Founder</p>
+					</span>
+				</div>
+				<div class="hover-tile hover-tile-visible"></div>
+			</div>
+		</div>
 	</div>
 </div>
 
