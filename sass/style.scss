@@ -486,7 +486,7 @@ front-page team section
 
  		.hover-tile {
  			@include transform(translate(0, -100%));
- 			@include transition(all, 0.5s ease-in-out);
+ 			@include transition(all, 0.35s ease-in-out);
  			background: inherit;
  			color: white;
  			height: inherit;
@@ -513,5 +513,61 @@ front-page team section
  			}
  		} 		
  	}
+ }
 
+  /* 
+front-page testimonials section
+ */
+ .testimonials-section{
+ 	.testimonial-box{
+ 		@include span-columns(12);
+ 		@include media($medium-screen) {
+ 			@include span-columns(10);
+ 			@include shift(1);
+ 		}
+ 		@include media($large-screen) {
+ 			@include span-columns(4);
+ 			@include shift(0);
+ 		}
+ 		position: relative;
+ 		margin-bottom: $golden*1em;
+ 		margin-top: $golden*1em;
+ 		&:last-child{
+ 			margin-bottom: 0;
+ 		}
+ 		padding: $golden*0.5em;
+ 		border: 1px solid transparentize(#333, 0.9);
+
+ 		@include transition(all, 0.5s ease);
+ 		border-bottom: 5px solid $base-border-color;
+ 		&:active,
+ 		&:focus,
+ 		&:hover {
+ 			border-bottom: 5px solid $action-color;
+ 		}
+
+ 		.image-container{
+ 			@include centerer(true,false);
+ 			top: -30px;
+ 			border-radius: 50%;
+ 			border:1px solid $action-color;
+ 			@include outer-container(67px);
+ 			height: 67px;
+ 			padding: 3px;
+ 			img{
+ 				border-radius: 50%;
+ 			}
+ 		}
+
+ 		p{
+ 			text-align: justify;
+ 			strong{
+ 				color: $action-color;
+ 			}
+ 			&:first-of-type{
+ 				margin-top: $golden*1.5em;
+ 				text-align: center;
+ 			}
+ 		}
+ 	}
  }

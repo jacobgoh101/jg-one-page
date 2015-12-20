@@ -94,6 +94,30 @@ get_header(); ?>
 	</div>
 </div>
 
+<!-- testimonials -->
+<div class="testimonials-section">
+	<div class="content">
+		<h1>Happy Customer</h1>
+		<hr id="title-separator">
+		<p>Praeclare hoc quidem. Quare conare, quaeso. Duo Reges: constructio interrete.</p>
+		<div class="testimonial-box">
+			<div class="image-container"><img src="http://localhost/one-page/wp-content/themes/jg-one-page/images/happy-customer/customer-1.jpg" alt="customer-image"></div>
+			<p><strong>Happy Customer</strong><br/>Executive, ABC Inc.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo igitur esse beatus potest. Indicant pueri, in quibus ut in speculis natura cernitur. Scisse enim te quis coarguere possit? Quantum Aristoxeni ingenium consumptum videmus in musicis? Duo Reges: constructio interrete. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Quid enim tanto opus est instrumento in optimis artibus comparandis?</p>
+		</div>
+		<div class="testimonial-box">
+			<div class="image-container"><img src="http://localhost/one-page/wp-content/themes/jg-one-page/images/happy-customer/customer-1.jpg" alt="customer-image"></div>
+			<p><strong>Happy Customer</strong><br/>Executive, ABC Inc.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo igitur esse beatus potest. Indicant pueri, in quibus ut in speculis natura cernitur. Scisse enim te quis coarguere possit? Quantum Aristoxeni ingenium consumptum videmus in musicis? Duo Reges: constructio interrete. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Quid enim tanto opus est instrumento in optimis artibus comparandis?</p>
+		</div><div class="testimonial-box">
+			<div class="image-container"><img src="http://localhost/one-page/wp-content/themes/jg-one-page/images/happy-customer/customer-1.jpg" alt="customer-image"></div>
+			<p><strong>Happy Customer</strong><br/>Executive, ABC Inc.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo igitur esse beatus potest. Indicant pueri, in quibus ut in speculis natura cernitur. Scisse enim te quis coarguere possit? Quantum Aristoxeni ingenium consumptum videmus in musicis? Duo Reges: constructio interrete. Iam doloris medicamenta illa Epicurea tamquam de narthecio proment: Si gravis, brevis; Quid enim tanto opus est instrumento in optimis artibus comparandis?</p>
+		</div>
+		
+	</div>
+</div>
+
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 	</main><!-- #main -->
