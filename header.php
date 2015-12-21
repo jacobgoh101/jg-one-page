@@ -11,6 +11,7 @@
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,13 +24,16 @@
 <body <?php body_class(); ?>>
 	<a id="top"></a>
 	<div id="page" class="site">
+		<div id="preloader"></div>
 		<?php
 		if( is_front_page() ){
 			?>
 
 			<div class="hero">
 				<div class="hero-inner">
-					<a href="javascript:void(0)" class="hero-logo"><img src="http://localhost/one-page/wp-content/themes/jg-one-page/images/logo2.png" alt="Logo Image"></a>
+					<a href="javascript:void(0)" class="hero-logo">
+						<img src="<?php $titan=TitanFramework::getInstance( 'jg-one-page'); echo esc_url(current(wp_get_attachment_image_src($titan->getOption( 'jg_hero_logo' ),'full'))); ?>" alt="Hero Logo">
+					</a>
 					<div class="hero-copy">
 						<h1>One Page</h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velut ego nunc moveor. An tu me de L. </p>
@@ -44,7 +48,7 @@
 		<header class="navigation" role="banner">
 			<div class="navigation-wrapper">
 				<a href="javascript:void(0)" class="logo">
-					<img src="http://localhost/one-page/wp-content/themes/jg-one-page/images/logo.png" alt="Logo Image">
+					<img src="<?php $titan=TitanFramework::getInstance( 'jg-one-page'); echo esc_url(current(wp_get_attachment_image_src($titan->getOption( 'jg_header_logo' ),'full'))); ?>" alt="Header Logo">
 				</a>
 				<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><i class="fa fa-bars"></i>
 				</a>

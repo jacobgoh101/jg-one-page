@@ -45,12 +45,12 @@ function jg_one_page_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'jg-one-page' ),
-	) );
+		) );
 
 	// register footer meny
 	register_nav_menus( array(
 		'footer' => esc_html__( 'Footer', 'jg-one-page' ),
-	) );
+		) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -62,7 +62,7 @@ function jg_one_page_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
-	) );
+		) );
 
 	/*
 	 * Enable support for Post Formats.
@@ -74,13 +74,13 @@ function jg_one_page_setup() {
 		'video',
 		'quote',
 		'link',
-	) );
+		) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'jg_one_page_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
-	) ) );
+		) ) );
 }
 endif;
 add_action( 'after_setup_theme', 'jg_one_page_setup' );
@@ -111,7 +111,7 @@ function jg_one_page_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+		) );
 }
 add_action( 'widgets_init', 'jg_one_page_widgets_init' );
 
@@ -131,7 +131,7 @@ function jg_one_page_scripts() {
 
 	wp_enqueue_script( 'header-js', get_template_directory_uri() . '/js/header.js', array('jquery'), null , true ); 
 
-	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	wp_enqueue_style('-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 }
 add_action( 'wp_enqueue_scripts', 'jg_one_page_scripts' );
 
@@ -159,3 +159,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+// Including Titan Framework
+require_once( 'titan-framework-checker.php' );
+require_once( 'titan-framework-code.php' );

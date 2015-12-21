@@ -59,6 +59,19 @@ Main
  		margin: 0 auto;
  	}
  }
+
+ div#preloader{
+ 	width: 100vw;
+ 	height: 100vh;
+ 	position: fixed;
+ 	left: 0;
+ 	top: 0;
+ 	background-image: url('http://localhost/one-page/wp-content/themes/jg-one-page/images/preloader.gif');
+ 	background-repeat: no-repeat;
+ 	background-position: center center;
+ 	background-color: #fff;
+ 	z-index: 9998;
+ }
 /* 
 Header Section
  */
@@ -66,7 +79,7 @@ Header Section
  	$large-screen: em(860) !default;
  	$large-screen: $large-screen;
  	padding: modular_scale(1,1em,$golden) 0;
- 	//border-bottom: 1px solid transparentize(#333, 0.9);
+ 	//border-bottom: 1px solid transparentize($base-font-color, 0.9);
  	//margin-bottom: modular_scale(1,1em,$golden);
 
   	// Mobile view
@@ -79,6 +92,12 @@ Header Section
 
   		i{
   			font-size: modular-scale(2);
+  			color:$base-font-color;
+  			&:active,
+  			&:focus,
+  			&:hover {
+  				color: $action-color;
+  			}
   		}
 
   		@include media ($large-screen) {
@@ -94,7 +113,12 @@ Header Section
 
   	.logo {
   		float: left;
-  		width: 60px;
+  		width: 200px;
+  		padding-top: 7px;
+  		@include media($medium-screen) {
+  			width: 280px;
+  			padding-top: 0px;
+  		}
   		margin-left: 1em*$golden;
   		margin-right: 1em*$golden;
 
@@ -153,6 +177,12 @@ Header Section
 
   	li.menu-item a {
   		display: inline-block;
+  		color: $base-font-color;
+  		&:active,
+  		&:focus,
+  		&:hover {
+  			color: $action-color;
+  		}
 
   		@include media(max-width $large-screen) {
   			padding-right: modular_scale(1,1em,$golden);
@@ -170,7 +200,7 @@ Header Section
   	width: 100%;
   	background-color: white;
   	z-index: 999;
-  	border-bottom: 1px solid transparentize(#333, 0.9);
+  	border-bottom: 1px solid transparentize($base-font-color, 0.9);
   }
   #sticky-header-empty-space{
   	width: 100%;
@@ -189,15 +219,15 @@ Footer
  .footer {
  	$large-screen: em(860) !default;
  	text-align: center;
- 	border-top: 1px solid transparentize(#333, 0.9);
+ 	border-top: 1px solid transparentize($base-font-color, 0.9);
 	// 	padding: modular_scale(1,1em,$golden) 0;
- 	padding-top: modular_scale(3,1em,$golden);
+	padding-top: modular_scale(3,1em,$golden);
 
- 	.footer-logo {
- 		margin-bottom: 1em;
- 		margin-right: 1em;
+	.footer-logo {
+		margin-bottom: 1em;
+		margin-right: 1em;
 
- 		@include media($large-screen) {
+		@include media($large-screen) {
  			//float: left;
  			margin-bottom: 0;
  		}
@@ -235,7 +265,7 @@ Footer
  	}
  	.site-info{
  		padding: 1em*$golden 0;
- 		border-top: 1px solid transparentize(#333, 0.9);
+ 		border-top: 1px solid transparentize($base-font-color, 0.9);
  		margin: 0 modular-scale(3,1em,$golden);
  		span{
  			display: inline-block;
@@ -261,6 +291,7 @@ Header Hero unit
   background-position: center;
   background-color: #324766;
   background-size: cover;
+  background-attachment: fixed;
   padding-bottom: 3em;
 
   height: 100vh;
@@ -357,7 +388,7 @@ front page
 front-page service section
  */
  #services-section{
- 	background-color: lighten(#333,70%);
+ 	background-color: lighten($base-font-color,70%);
  	@include outer-container(100%);
  	@include clearfix;
  	//margin: modular_scale(1,1em,$golden) 0 0;
@@ -394,13 +425,13 @@ front-page service section
 front-page story section
  */
  .story-section{
- 	border-bottom: 1px solid transparentize(#333, 0.9);
- 	border-top: 1px solid transparentize(#333, 0.9);
+ 	border-bottom: 1px solid transparentize($base-font-color, 0.9);
+ 	border-top: 1px solid transparentize($base-font-color, 0.9);
  	.content{
  		.side-image {  
  			$base-line-height: 1.5em !default;
  			$action-color: #477DCA !default;
- 			$dark-gray: #333 !default;
+ 			$dark-gray: $base-font-color !default;
  			$large-screen: em(860) !default;
  			$base-font-color: $dark-gray !default;
 
@@ -454,7 +485,7 @@ front-page team section
  */
 
  .team-section{
- 	border-bottom: 1px solid transparentize(#333, 0.9);
+ 	border-bottom: 1px solid transparentize($base-font-color, 0.9);
  	.hover-tile-outer {
  		$width: 200px;
  		width: $width;
@@ -547,7 +578,7 @@ front-page testimonials section
  			margin-bottom: 0;
  		}
  		padding: $golden*0.5em;
- 		border: 1px solid transparentize(#333, 0.9);
+ 		border: 1px solid transparentize($base-font-color, 0.9);
 
  		@include transition(all, 0.5s ease);
  		border-bottom: 5px solid $base-border-color;

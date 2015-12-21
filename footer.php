@@ -14,7 +14,7 @@
 </div><!-- #content -->
 <footer class="footer" role="contentinfo">
 	<div class="footer-logo">
-		<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png" alt="Logo image">
+		<img src="<?php $titan=TitanFramework::getInstance( 'jg-one-page'); echo esc_url(current(wp_get_attachment_image_src($titan->getOption( 'jg_footer_logo' ),'full'))); ?>" alt="Footer Logo">
 	</div>
 	<?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => '') ); ?>
 	<div class="footer-social-icon">
