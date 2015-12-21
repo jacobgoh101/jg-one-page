@@ -53,6 +53,13 @@ function my_theme_create_options() {
 		));
 
 	$panel->createOption( array(
+		'name' => 'Custom CSS',
+		'id' => 'jg_custom_css',
+		'type' => 'textarea',
+		'desc' => 'Add in your custom css here'
+		) );
+
+	$panel->createOption( array(
 		'type' => 'save'
 		) );
 }
@@ -111,4 +118,17 @@ function font_selector(){
 		</style>
 		<?php
 	}
+}
+
+add_action('wp_head', 'jg_custom_css');
+function jg_custom_css(){
+	$titan = TitanFramework::getInstance( 'jg-one-page' );
+
+	?>
+	<style type="text/css">
+		<?php 
+		echo $titan->getOption('jg_custom_css');
+		?>
+	</style>
+	<?php
 }
